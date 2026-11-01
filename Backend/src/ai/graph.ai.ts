@@ -17,6 +17,8 @@ const state = new StateSchema({
 
 const solutionNode: GraphNode<typeof state> = async(state)=>{
 
+    console.log("STATE.PROBLEM INSIDE SOLUTION NODE:", state.problem)
+
     const [mistralResponse, cohoreResponse] = await Promise.all([
         mistralModel.invoke(state.problem),
         cohoreModel.invoke(state.problem)
