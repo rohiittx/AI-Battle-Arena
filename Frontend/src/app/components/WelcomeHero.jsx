@@ -1,5 +1,5 @@
 import React from 'react'
-import { Swords, Bot, Scale, Sparkles, Zap, ArrowRight, CheckCircle } from 'lucide-react'
+import { Swords, Bot, Scale, ArrowRight } from 'lucide-react'
 
 export default function WelcomeHero({ onSelectPrompt }) {
   const cards = [
@@ -7,88 +7,88 @@ export default function WelcomeHero({ onSelectPrompt }) {
       title: 'Capital of India',
       prompt: 'what is the capital of India',
       desc: 'Compare concise direct response vs detailed geographical & administrative context.',
-      badge: 'Popular Demo'
+      badge: 'Direct Query'
     },
     {
       title: 'React Hooks vs Context',
       prompt: 'Compare React Hooks and Context API with code examples',
       desc: 'Evaluate technical depth, code formatting, and practical usability.',
-      badge: 'Code Comparison'
+      badge: 'Code Compare'
     },
     {
       title: 'Quantum Computing',
       prompt: 'Explain quantum computing to a 10 year old child',
       desc: 'Analyze simplicity of explanations, analogy quality, and engagement.',
-      badge: 'Analogy Test'
+      badge: 'Analogy'
     }
   ]
 
   return (
     <div className="w-full max-w-4xl mx-auto py-8 px-4 text-center my-auto">
       {/* Hero Badge */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-6 shadow-sm shadow-cyan-500/10">
-        <Swords className="w-3.5 h-3.5 text-cyan-400" />
-        <span>NEXT-GEN AI EVALUATION ARENA</span>
+      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono font-medium mb-5">
+        <Swords className="w-3.5 h-3.5 text-rose-400" />
+        <span>AI EVALUATION ARENA</span>
       </div>
 
       {/* Main Title */}
-      <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-        Two AI Solutions <span className="gradient-text-hero">One Independent Judge</span>
+      <h1 className="text-2xl sm:text-4xl font-bold text-zinc-100 tracking-tight leading-tight mb-3">
+        Two AI Solutions. <span className="text-rose-400">One Independent Judge.</span>
       </h1>
-      <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Submit any question to trigger two AI model responses side-by-side. Our automated AI Judge inspects both solutions and delivers detailed scores and reasoning.
+      <p className="text-sm text-zinc-400 max-w-xl mx-auto mb-8 leading-relaxed">
+        Submit any question to trigger two AI model responses side-by-side. An automated AI Judge inspects both solutions and delivers detailed scores and reasoning.
       </p>
 
       {/* Architecture Visual */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10 text-left">
-        <div className="p-4 rounded-2xl bg-cyan-950/20 border border-cyan-500/30 backdrop-blur-md">
-          <div className="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto mb-8 text-left">
+        <div className="p-4 rounded-md bg-zinc-900 border border-zinc-800">
+          <div className="w-7 h-7 rounded-md bg-zinc-800 border border-zinc-700 text-rose-400 flex items-center justify-center mb-3">
             <Bot className="w-4 h-4" />
           </div>
-          <h3 className="font-mono text-xs font-bold text-cyan-300 mb-1">SOLUTION 1</h3>
-          <p className="text-xs text-gray-400">Direct, concise, and focused response delivery.</p>
+          <h3 className="font-mono text-xs font-bold text-zinc-200 mb-1">SOLUTION 1</h3>
+          <p className="text-xs text-zinc-400">Direct, concise, and focused response delivery.</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-purple-950/20 border border-purple-500/30 backdrop-blur-md">
-          <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+        <div className="p-4 rounded-md bg-zinc-900 border border-zinc-800">
+          <div className="w-7 h-7 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300 flex items-center justify-center mb-3">
             <Bot className="w-4 h-4" />
           </div>
-          <h3 className="font-mono text-xs font-bold text-purple-300 mb-1">SOLUTION 2</h3>
-          <p className="text-xs text-gray-400">Comprehensive, detailed context & extra depth.</p>
+          <h3 className="font-mono text-xs font-bold text-zinc-200 mb-1">SOLUTION 2</h3>
+          <p className="text-xs text-zinc-400">Comprehensive, detailed context and extra depth.</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-amber-950/20 border border-amber-500/30 backdrop-blur-md">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3">
+        <div className="p-4 rounded-md bg-zinc-900 border border-zinc-800">
+          <div className="w-7 h-7 rounded-md bg-zinc-800 border border-zinc-700 text-rose-400 flex items-center justify-center mb-3">
             <Scale className="w-4 h-4" />
           </div>
-          <h3 className="font-mono text-xs font-bold text-amber-300 mb-1">JUDGE RECOMMENDATION</h3>
-          <p className="text-xs text-gray-400">Independent score (out of 10) & verdict reasoning.</p>
+          <h3 className="font-mono text-xs font-bold text-zinc-200 mb-1">JUDGE VERDICT</h3>
+          <p className="text-xs text-zinc-400">Independent score (out of 10) & verdict reasoning.</p>
         </div>
       </div>
 
       {/* Preset Demo Prompts */}
-      <div className="text-left max-w-3xl mx-auto space-y-3">
-        <h3 className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider px-1">
-          Select a sample battle prompt to test:
+      <div className="text-left max-w-3xl mx-auto space-y-2.5">
+        <h3 className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider px-1">
+          Sample battle prompts:
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {cards.map((c, i) => (
             <button
               key={i}
               onClick={() => onSelectPrompt(c.prompt)}
-              className="group p-4 rounded-2xl bg-[#141724] hover:bg-white/10 border border-white/10 hover:border-cyan-400/40 text-left transition-all duration-200 cursor-pointer flex flex-col justify-between"
+              className="group p-3.5 rounded-md bg-zinc-900 hover:bg-zinc-800/80 border border-zinc-800 hover:border-zinc-700 text-left transition-colors cursor-pointer flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
                     {c.badge}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-rose-400 transition-colors" />
                 </div>
-                <h4 className="text-xs font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                <h4 className="text-xs font-bold text-zinc-200 mb-1 group-hover:text-white transition-colors">
                   {c.title}
                 </h4>
-                <p className="text-[11px] text-gray-400 line-clamp-2">
+                <p className="text-[11px] text-zinc-400 line-clamp-2">
                   "{c.prompt}"
                 </p>
               </div>

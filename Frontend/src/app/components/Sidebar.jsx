@@ -5,10 +5,6 @@ import {
   MessageSquare,
   Trophy,
   Sliders,
-  Sparkles,
-  ChevronRight,
-  ShieldAlert,
-  Zap,
   Trash2,
   X
 } from 'lucide-react'
@@ -28,95 +24,93 @@ export default function Sidebar({
       {isOpen && (
         <div
           onClick={onClose}
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden transition-opacity"
+          className="fixed inset-0 bg-black/60 z-40 lg:hidden transition-opacity"
         />
       )}
 
       {/* Sidebar Drawer */}
       <aside
-        className={`fixed lg:static top-0 left-0 bottom-0 w-[280px] bg-[#0d0f18] border-r border-white/10 z-50 flex flex-col transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:static top-0 left-0 bottom-0 w-[270px] bg-zinc-950 border-r border-zinc-800 z-50 flex flex-col transition-transform duration-200 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Header / Brand */}
-        <div className="p-5 border-b border-white/5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-[1px] flex items-center justify-center shadow-lg shadow-cyan-500/20">
-              <div className="w-full h-full bg-[#0d0f18] rounded-[11px] flex items-center justify-center">
-                <Swords className="w-5 h-5 text-cyan-400" />
-              </div>
+        <div className="p-4 border-b border-zinc-800 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-md bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-400 shrink-0">
+              <Swords className="w-4 h-4" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <h1 className="font-extrabold text-sm tracking-tight text-white">AI BATTLE ARENA</h1>
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                  PRO
+                <h1 className="font-bold text-sm tracking-tight text-zinc-100">BATTLE ARENA</h1>
+                <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                  AI
                 </span>
               </div>
-              <p className="text-[11px] text-gray-400 font-medium">Dual Solution & Judge Evaluation</p>
+              <p className="text-[11px] text-zinc-400">Model Evaluation</p>
             </div>
           </div>
 
           {/* Close button on mobile */}
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 lg:hidden transition-colors"
+            className="p-1 rounded-md text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 lg:hidden transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Action Button */}
-        <div className="p-4">
+        <div className="p-3">
           <button
             onClick={() => {
               onNewSession()
               onClose()
             }}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-xs tracking-wide shadow-md shadow-cyan-500/20 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full py-2.5 px-3 rounded-md bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors"
           >
-            <Plus className="w-4 h-4 stroke-[3]" />
-            NEW ARENA BATTLE
+            <Plus className="w-4 h-4" />
+            New Battle
           </button>
         </div>
 
         {/* Navigation Section */}
-        <div className="px-3 py-2 space-y-1">
-          <div className="px-3 py-1.5 text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
-            Navigation
+        <div className="px-3 py-1 space-y-0.5">
+          <div className="px-2 py-1 text-[10px] font-mono font-semibold text-zinc-400 uppercase tracking-wider">
+            Workspace
           </div>
-          <button className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 text-xs font-medium border border-cyan-500/20">
+          <button className="w-full flex items-center justify-between px-2.5 py-2 rounded-md bg-zinc-900 text-zinc-100 text-xs font-medium border border-zinc-800">
             <div className="flex items-center gap-2.5">
-              <Swords className="w-4 h-4" />
+              <Swords className="w-4 h-4 text-rose-400" />
               <span>Live Arena</span>
             </div>
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
           </button>
-          <button className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-white/5 text-xs font-medium transition-colors">
+          <button className="w-full flex items-center justify-between px-2.5 py-2 rounded-md text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 text-xs font-medium transition-colors">
             <div className="flex items-center gap-2.5">
               <Trophy className="w-4 h-4" />
               <span>Leaderboard</span>
             </div>
-            <span className="text-[10px] font-mono text-gray-400">v2.4</span>
+            <span className="text-[10px] font-mono text-zinc-400">v2.4</span>
           </button>
-          <button className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-white/5 text-xs font-medium transition-colors">
+          <button className="w-full flex items-center justify-between px-2.5 py-2 rounded-md text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 text-xs font-medium transition-colors">
             <div className="flex items-center gap-2.5">
               <Sliders className="w-4 h-4" />
-              <span>Judge Parameters</span>
+              <span>Parameters</span>
             </div>
           </button>
         </div>
 
         {/* History List */}
-        <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1 border-t border-white/5">
-          <div className="px-3 py-1.5 flex items-center justify-between text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+        <div className="flex-1 overflow-y-auto px-3 py-3 space-y-0.5 border-t border-zinc-800">
+          <div className="px-2 py-1 flex items-center justify-between text-[10px] font-mono font-semibold text-zinc-400 uppercase tracking-wider">
             <span>Recent Battles</span>
-            <span className="text-gray-400">{sessions.length}</span>
+            <span className="text-zinc-400">{sessions.length}</span>
           </div>
 
           {sessions.length === 0 ? (
-            <div className="px-3 py-6 text-center text-xs text-gray-400 italic">
-              No recent battles yet
+            <div className="px-2 py-6 text-center text-xs text-zinc-400">
+              No recent battles
             </div>
           ) : (
             sessions.map((session) => {
@@ -124,20 +118,20 @@ export default function Sidebar({
               return (
                 <div
                   key={session.id}
-                  className={`group relative flex items-center justify-between px-3 py-2.5 rounded-xl cursor-pointer text-xs transition-all ${
+                  className={`group relative flex items-center justify-between px-2.5 py-2 rounded-md cursor-pointer text-xs transition-colors ${
                     isActive
-                      ? 'bg-white/10 text-white font-medium border border-white/10 shadow-sm'
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
+                      ? 'bg-zinc-900 text-zinc-100 font-medium border border-zinc-800'
+                      : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/50'
                   }`}
                   onClick={() => {
                     onSelectSession(session.id)
                     onClose()
                   }}
                 >
-                  <div className="flex items-center gap-2.5 min-w-0 pr-6">
+                  <div className="flex items-center gap-2.5 min-w-0 pr-4">
                     <MessageSquare
                       className={`w-3.5 h-3.5 shrink-0 ${
-                        isActive ? 'text-cyan-400' : 'text-gray-400'
+                        isActive ? 'text-rose-400' : 'text-zinc-500'
                       }`}
                     />
                     <span className="truncate">{session.title}</span>
@@ -149,7 +143,7 @@ export default function Sidebar({
                       e.stopPropagation()
                       onDeleteSession(session.id)
                     }}
-                    className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-red-400 rounded transition-opacity"
+                    className="opacity-0 group-hover:opacity-100 p-1 text-zinc-500 hover:text-red-400 rounded transition-opacity"
                     title="Delete Battle"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -161,13 +155,13 @@ export default function Sidebar({
         </div>
 
         {/* Footer info */}
-        <div className="p-4 border-t border-white/5 bg-[#0a0b12]">
-          <div className="flex items-center justify-between text-xs text-gray-400">
+        <div className="p-3 border-t border-zinc-800 bg-zinc-950">
+          <div className="flex items-center justify-between text-xs text-zinc-400">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-[11px]">Judge Engine Active</span>
+              <div className="w-2 h-2 rounded-full bg-rose-500" />
+              <span className="text-[11px]">Judge Active</span>
             </div>
-            <span className="text-[10px] font-mono text-gray-400">v1.0.4</span>
+            <span className="text-[10px] font-mono text-zinc-400">v1.0.4</span>
           </div>
         </div>
       </aside>

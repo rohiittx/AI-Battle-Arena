@@ -3,110 +3,45 @@
 
 @layer base {
   :root {
-    --bg-dark: #090a0f;
-    --bg-surface: #11131f;
-    --bg-card: #161927;
+    --bg-dark: #09090b;
+    --bg-surface: #121215;
+    --bg-card: #18181b;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-dark);
-    color: #f3f4f6;
+    color: #f4f4f5;
     overflow-x: hidden;
   }
 }
 
-/* Custom scrollbars */
+/* Custom scrollbars - minimal and sharp */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 17, 26, 0.5);
+  background: #09090b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
+  background: #27272a;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: #3f3f46;
 }
 
-/* Glassmorphism utility classes */
-.glass-panel {
-  background: rgba(17, 19, 31, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Clean flat card styling - no gradients, no box shadows */
+.arena-card {
+  background-color: #121215;
+  border: 1px solid #27272a;
+  border-radius: 0.375rem;
 }
 
-.glass-card-solution-1 {
-  background: linear-gradient(145deg, rgba(6, 182, 212, 0.06) 0%, rgba(17, 19, 31, 0.85) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(6, 182, 212, 0.25);
-}
-
-.glass-card-solution-1:hover {
-  border-color: rgba(6, 182, 212, 0.45);
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.12);
-}
-
-.glass-card-solution-2 {
-  background: linear-gradient(145deg, rgba(168, 85, 247, 0.06) 0%, rgba(17, 19, 31, 0.85) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-}
-
-.glass-card-solution-2:hover {
-  border-color: rgba(168, 85, 247, 0.45);
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.12);
-}
-
-.glass-card-judge {
-  background: linear-gradient(145deg, rgba(245, 158, 11, 0.08) 0%, rgba(16, 185, 129, 0.04) 50%, rgba(17, 19, 31, 0.9) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  box-shadow: 0 0 35px rgba(245, 158, 11, 0.07);
-}
-
-.glass-card-judge:hover {
-  border-color: rgba(245, 158, 11, 0.5);
-}
-
-/* Animations */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s infinite ease-in-out;
-}
-
-.gradient-text-hero {
-  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-border-btn {
-  background: linear-gradient(135deg, #06b6d4, #a855f7);
-  padding: 1px;
-  border-radius: 0.75rem;
-}
-
-.gradient-border-btn > button {
-  background: #090a0f;
-  border-radius: calc(0.75rem - 1px);
-  transition: all 0.2s ease;
-}
-
-.gradient-border-btn:hover > button {
-  background: transparent;
+.arena-card:hover {
+  border-color: #3f3f46;
 }
